@@ -1,12 +1,13 @@
 $(function() {
-	var lines = [
-	{text: "I'm not a photographer, but I can picture you and me together"},
-	{text: "I'm having a sale in my bedroom. My clothes are 100% off"}
-	];
+
+	var baseUrl = "http://"
+
+	$.get("/api/lines", function (data) {
+		var lines = data;
+		_.each(lines, function(line) {
+		$("#lines").append($line(line));
+		});
+	});
 
 	$line = _.template($("#lineTemplate").html());
-
-	_.each(lines, function(line) {
-		$("#lines").append($line(line));
-	})
 });
