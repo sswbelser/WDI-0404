@@ -1,6 +1,7 @@
 $(function() {
 
-	var baseUrl = "http://"
+	var devUrl = "http://localhost:3000"
+	// var baseUrl = "https://[HEROKU URL"
 
 	$.get("/api/lines", function (data) {
 		var lines = data;
